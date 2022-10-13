@@ -1,11 +1,22 @@
-@extends('layout')
+{{--@extends('layout')--}}
 
-@section('content')
-    <div class="mx-4">
+{{--@section('content')--}}
+    <!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    @viteReactRefresh
+    @vite(['resources/css/app.css', 'resources/js/app.jsx'])
+    <title>Belarus</title>
+</head>
+<div class="mx-4">
         <div class="bg-gray-50 border border-gray-200 p-10 rounded max-w-lg mx-auto mt-24">
             <header class="text-center">
                 <h2 class="text-2xl font-bold uppercase mb-1">
-                    Добавь место
+                    Редактор
                 </h2>
             </header>
             <form method="POST" action="/places/{{$place->id}}" enctype="multipart/form-data">
@@ -72,4 +83,4 @@
             </form>
         </div>
     </div>
-@endsection
+{{--@endsection--}}

@@ -15,7 +15,7 @@
                         </h3>
                           <x-tags :tagsdb="$place->tags"/>
                         <div class="text-lg mt-4">
-                            {{$place->location}}
+                            {{$place->description}}
                         </div>
                     </div>
                 </div>

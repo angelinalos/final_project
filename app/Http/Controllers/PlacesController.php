@@ -29,17 +29,13 @@ class PlacesController extends Controller
     public function store(StorePlacesRequest $request) {
         $data = $request->all();
 
-//        if($request->hasFile('img')) {
-//            $data['img'] = $request->file('img')->store('img', 'public');
-//        }
-
         if ($request->hasFile('img')){
             $file = $request->file('img');
             $newFileName = time().'-'.$request->name.'.'.$file->getClientOriginalExtension();
             Storage::disk('public')->putFileAs('places', $file, $newFileName);
             $data['img'] = Storage::url('places'.$newFileName);
         }
-$data['user_id'] = auth()->id();
+        $data['user_id'] = auth()->id();
         Places::create($data);
 
         return redirect('/');
@@ -58,7 +54,7 @@ $data['user_id'] = auth()->id();
 
         $place->update($data);
 
-        return back();
+        return redirect('/');
     }
 
     public function delete(Places $place) {

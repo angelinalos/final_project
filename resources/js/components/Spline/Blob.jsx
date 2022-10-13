@@ -1,11 +1,12 @@
 import React from 'react'
 import Spline from "@splinetool/react-spline"
+import ReactDOM from "react-dom";
 
-export function Blob(){
+export default function Blob(){
     return(
-                <div className="blob">
-                    <Spline scene="https://prod.spline.design/OJvV7DUAZNa6bVYV/scene.splinecode" />
-                </div>
+        <div className="blob_container">
+            <Spline scene="https://prod.spline.design/OJvV7DUAZNa6bVYV/scene.splinecode" />
+        </div>
 
     )
 }

@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('title');
             $table->string('img')->nullable();
             $table->string('tags');
-            $table->string('location');
+            $table->decimal('lat', 10, 8);
+            $table->decimal('lng', 10, 8);
             $table->longText('description');
             $table->timestamps();
         });

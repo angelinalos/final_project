@@ -14,16 +14,9 @@ class UserController extends Controller
 
     public function store(StoreUserRequest $request) {
         $data = $request->all();
-
-        // Hash Password
         $data['password'] = bcrypt($data['password']);
-
-        // Create User
         $user = User::create($data);
-
-        // Login
         auth()->login($user);
-
         return redirect('/');
     }
 
@@ -33,8 +26,7 @@ class UserController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/')->with('message', 'You have been logged out!');
-
+        return redirect('/');
     }
 
     public function login() {

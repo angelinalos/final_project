@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,11 +17,14 @@ class PlacesFactory extends Factory
      */
     public function definition()
     {
+        $users = User::pluck('id')->toArray();
         return [
+            'user_id'=>$this->faker->randomElement($users),
             'title' => $this->faker->sentence(),
             'tags' => 'Беларусь, Гомель, область',
-            'location' => $this->faker->city(),
-            'description' => $this->faker->paragraph(5),
+            'lat' => $this->faker->latitude(),
+            'lng' => $this->faker->longitude(),
+            'description' => $this->faker->paragraph(5)
         ];
 
 

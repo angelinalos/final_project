@@ -25,7 +25,8 @@ class StorePlacesRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'location' => 'required',
+            'lat' => 'required',
+            'lng' => 'required',
             'tags' => 'required',
             'description' => 'required|min:10',
             'img'=>'mimes:jpg,png,bmp'

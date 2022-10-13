@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Places extends Model
 {
-    protected $fillable =['title', 'description', 'tags', 'location', 'user_id'];
+    protected $fillable =['title', 'description', 'tags', 'lat', 'user_id', 'img', 'lng'];
     use HasFactory;
     public function scopeFilter($tags, array $filter) {
         if($filter['tag'] ?? false) {

@@ -9,6 +9,7 @@ module.exports = {
     extend: {
         colors:{
             laravel: "#174978",
+            custom: '#F9F8F6'
         }
 
     },
